@@ -60,14 +60,9 @@ class Card extends Component {
 
         if(this.state.contentVisible) {
             this.setState (INITIAL_STATE)
-              
-        
-        } else {
+            } else {
             this.setState({ contentVisible: true})
         }
-        
-        
-
     }
    
     render() {
@@ -93,12 +88,13 @@ class Card extends Component {
             {title: 'Adjective', state: this.state.adjectiveFive, name: 'adjectiveFive'}
         ]  
 
-        
         return (
             <form onSubmit={this.handleFormSubmit} className="card">
-                <div className='card_inputs'>
+                <div className='card__inputs'>
                 {
-                    inputData.map(data => Input( (data), this.handleInputChange ))
+                    inputData.map((data, index) => { 
+                      return Input( (data), this.handleInputChange, index ) 
+                    })
                 }   
                 </div>
                 <button type="submit">{!this.state.contentVisible ? 'Generate Madlib' : 'Clear Form'}</button>

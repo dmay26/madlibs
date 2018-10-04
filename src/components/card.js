@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Input from './input';
-import Home from './home';
 import Content from './content';
 
 const INITIAL_STATE = {
